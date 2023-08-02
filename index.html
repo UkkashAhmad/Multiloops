@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MultiLoop</title>
+</head>
+<body>
+    <h1>here is MultiLoop</h1>
+    <label for="loop">Surprise</label>
+    <input type="number" id="loop" onchange="multiloop()" placeholder="type a number.." >
+    <button onclick="multiloop()">generate it!</button>
+    <label for="loopa">See MAgic</label>
+    <input type="number" id="loopa" onchange="multiloopa()" placeholder="What...">
+    <h1 id="printPlace">Check Me</h1>
+    <script>
+
+function multiloop() {
+    const TakeNum=document.getElementById('loop').value;
+   let pPlace=" "
+   
+    for (let u = 1; u <=TakeNum; u++) {
+    let row = ``;
+        for (let v = 0; v < TakeNum; v++) {
+            row+="*"
+            
+        }
+        pPlace+= `${row}  <br>`
+    }
+  document.getElementById('printPlace').innerHTML= pPlace
+}
+
+
+
+
+// 2nd loop
+
+function multiloopa() {
+    const takeNum= document.getElementById('loopa').value;
+    let Pplace=" "
+    for (let a = 1; a < takeNum; a++) {
+       let raw="";
+       for (let b = 1; b <= a; b++) {
+     raw+=" * "
+        
+       }
+       Pplace+= `${raw}  <br>`
+           }
+           document.getElementById('printPlace').innerHTML= Pplace
+}
+    </script>
+</body>
+</html>
